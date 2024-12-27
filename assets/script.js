@@ -58,16 +58,15 @@ function calculatebmi() {
 }
 
 // Fetch file size
-function fetchFileSize(url, callback) {
-    const xhr = new XMLHttpRequest();
-    xhr.open("HEAD", url, true);
-    xhr.onreadystatechange = function () {
-        if (this.readyState === this.DONE) {
-            const size = parseInt(xhr.getResponseHeader("Content-Length"));
-            callback(isNaN(size) ? 0 : size);
-        }
-    };
-    xhr.send();
+async function fetchFileSize(url) {
+    try {
+        const response = await fetch(url);
+        const blob = await response.blob(); // Fetch the file as a blob
+        return blob.size; // Return size in bytes
+    } catch (error) {
+        console.error("Error fetching file size:", error);
+        return 0; // Fallback to 0 if fetching fails
+    }
 }
 
 // Initialize script
@@ -80,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (elements.currentPageSize) {
-        fetchFileSize(window.location.href, function (size) {
+        fetchFileSize(window.location.href).then((size) => {
             elements.currentPageSize.innerHTML = (size / 1024).toFixed(2) + " KB";
         });
     }
