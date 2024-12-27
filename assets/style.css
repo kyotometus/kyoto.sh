@@ -1,6 +1,15 @@
+@keyframes cuteani{
+  0%{
+    transform: translateY(3px);
+  }
+  100%{
+    transform: translateY(-3px);
+  }
+}
+
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     font-family: "IBM Plex Mono", serif;
     margin: 0;
     padding: 0;
@@ -8,101 +17,115 @@ body {
 
 .main-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
 .container {
-    border: 1px solid #fff;
+    border: 1px solid #000;
     padding: 20px;
+}
+
+.container-fixed {
+    border: 1px solid #000;
+    padding: 20px;
+    width: 25%;
 }
 
 .content {
     margin: 0;
 }
 
-/* do i need this or am i just lazy */
-.ibm-plex-mono-thin {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 100;
-  font-style: normal;
+.links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.ibm-plex-mono-extralight {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 200;
-  font-style: normal;
+.links a {
+    color: #000;
+    font-weight: 600;
 }
 
-.ibm-plex-mono-light {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 300;
-  font-style: normal;
+.links a:hover {
+    color: #646464;
+    text-decoration: underline;
+    animation: cuteani 0.5s infinite alternate;
 }
 
-.ibm-plex-mono-regular {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 400;
-  font-style: normal;
+.table-common {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.ibm-plex-mono-medium {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 500;
-  font-style: normal;
+.table-common th, .table-common td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
 }
 
-.ibm-plex-mono-semibold {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 600;
-  font-style: normal;
+.back-to-home {
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
-.ibm-plex-mono-bold {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 700;
-  font-style: normal;
+.back-to-home a {
+    color: #000;
+    font-weight: 600;
 }
 
-.ibm-plex-mono-thin-italic {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 100;
-  font-style: italic;
+.back-to-home a:hover {
+    color: #646464;
+    text-decoration: underline;
+    animation: cuteani 0.5s infinite alternate;
 }
 
-.ibm-plex-mono-extralight-italic {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 200;
-  font-style: italic;
+.footer {
+    text-align: center;
+    padding: 10px;
+    width: 100%; /* Ensures it spans the full width */
 }
 
-.ibm-plex-mono-light-italic {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 300;
-  font-style: italic;
-}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        height: auto;
+        padding: 20px;
+    }
 
-.ibm-plex-mono-regular-italic {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 400;
-  font-style: italic;
-}
+    .container-fixed {
+        width: 75%;
+    }
 
-.ibm-plex-mono-medium-italic {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 500;
-  font-style: italic;
-}
+    .footer {
+        position: relative;
+    }
 
-.ibm-plex-mono-semibold-italic {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 600;
-  font-style: italic;
-}
+    .links {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.ibm-plex-mono-bold-italic {
-  font-family: "IBM Plex Mono", serif;
-  font-weight: 700;
-  font-style: italic;
+    .links a {
+        margin: 0;
+    }
+
+    .links a:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .table-common th, .table-common td {
+        padding: 5px;
+    }
+
+    .footer {
+      position: relative;
+      text-align: center;      
+      width: 75%;
+      margin: 0 auto;
+    }
+
 }
