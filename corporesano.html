@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>corpore sano | kyoto.sh</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="back-to-home">
+        <a href="/index.html">← home</a>
+    </div>
+
+    <div class="main-content">
+        <div class="container-fixed">
+            <div class="content">
+                <h1>corpore sano</h1>
+                <p>tomorrow will be better</p>
+                <p>and if it's not, i will say it again</p>
+            </div>
+        </div>
+
+        <div class="container-fixed">
+            <h2>Current Version</h2>
+            <p>Last update: <span id="lastUpdateVersion"></span></p>
+            <table class="table-common">
+                <tr>
+                    <th>Age</th>
+                    <th>Weight</th>
+                    <th>bmi</th>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td id="weight">75.5kg</td>
+                    <td id="bmi">24.5</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="container-fixed">
+            <h2>P.B.</h2>
+            <p>Last update: <span id="lastUpdateExs"></span></p>
+            <table class="table-common">
+                <tr>
+                    <th>Exercise</th>
+                    <th>Reps</th>
+                </tr>
+                <tr>
+                    <td>Pushups</td>
+                    <td id="pushups">20</td>
+                </tr>
+                <tr>
+                    <td>Pullups</td>
+                    <td id="pullups">12</td>
+                </tr>
+                <tr>
+                    <td>Dips</td>
+                    <td id="dips">12</td>
+                </tr>
+                <tr>
+                    <td>Plank</td>
+                    <td id="plank">1:32 min</td>
+                </tr>
+                <tr>
+                    <td>Running (5k)</td>
+                    <td id="running5k">27:32 min</td>
+                </tr>
+                <tr>
+                    <td>Running (10k)</td>
+                    <td id="running10k">27:32 min</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        <p>kyoto.sh © <span id="currentYear"></span> | current page file size: <span id="currentPageSize"></span>
+        </p>
+    </div>
+
+    <script src="assets/script.js"></script>
+
+</body>
